@@ -129,7 +129,9 @@ def writeautocal(sensor,channel):
 		" 15m   15m   15m   0  step   positive     SENSOR:" + sensor + "\n")
 	f.write("1 " + channel + " " + calmon +  " " + calval[sensor][5].ljust(3) + \
 		" 10m   4h    10m   0  random 1.25    none SENSOR:" + sensor + "\n")
-
+	
+#	f.write("1 " + channel + " " + calmon +  " " + calval[sensor][0].ljust(3) + \
+#		" 2m    5m   2m    0  sine   0.02        SENSOR:" + sensor + "\n")
 	f.close()
 
 	return
@@ -172,8 +174,8 @@ os.system('/opt/util/bin/autocal -d 1 ' + parserval.action)
 
 
 
-os.remove("qregister.config")
-os.remove("autocal.config")
+#os.remove("qregister.config")
+#os.remove("autocal.config")
 
 
 
